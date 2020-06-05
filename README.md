@@ -9,20 +9,17 @@ Your project will include a web app where an emergency worker can input a new me
 
 Project Components There are three components we'll need to complete for this project.
 
-ETL Pipeline In a Python script, process_data.py, write a data cleaning pipeline that: Loads the messages and categories datasets Merges the two datasets Cleans the data Stores it in a SQLite database
+**ETL Pipeline**
+In a Python script, process_data.py, write a data cleaning pipeline that: Loads the messages and categories datasets Merges the two datasets Cleans the data Stores it in a SQLite database
 
-ML Pipeline In a Python script, train_classifier.py, write a machine learning pipeline that: Loads data from the SQLite database Splits the dataset into training and test sets Builds a text processing and machine learning pipeline Trains and tunes a model using GridSearchCV Outputs results on the test set Exports the final model as a pickle file
+**ML Pipeline**
+In a Python script, train_classifier.py, write a machine learning pipeline that: Loads data from the SQLite database Splits the dataset into training and test sets Builds a text processing and machine learning pipeline Trains and tunes a model using GridSearchCV Outputs results on the test set Exports the final model as a pickle file
 
-Flask Web App We will be taking the user message and classify them into 36 categories. There are some beautiful visualization of the data as well
+**Flask Web App**
+We will be taking the user message and classify them into 36 categories. There are some beautiful visualization of the data as well
 
 ## Instructions:
-Run the following commands in the project's root directory to set up your database and model.
 
-To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db To run ML pipeline that trains classifier and saves python models/train_classifier.py data/DisasterResponse.db models/classifier.pkl Run the following command in the app's directory to run your web app. python run.py
-
-Go to http://0.0.0.0:3001/
-
-Instructions:
 Run the following commands in the project's root directory to set up your database and model.
 
 To run ETL pipeline that cleans data and stores in database python data/process_data.py data/disaster_messages.csv data/disaster_categories.csv data/DisasterResponse.db
