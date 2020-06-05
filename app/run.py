@@ -47,24 +47,57 @@ def index():
     # TODO: Below is an example - modify to create your own visuals
     graphs = [
         {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
-                )
-            ],
-
-            'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
+            "data": [
+              {
+                "type": "pie",
+                "uid": "f4de1f",
+                "hole": 0.4,
+                "name": "Genre",
+                "pull": 0,
+                "domain": {
+                  "x": gen_per,
+                  "y": gen
                 },
-                'xaxis': {
-                    'title': "Genre"
+                "marker": {
+                  "colors": [
+                    "#7fc97f",
+                    "#beaed4",
+                    "#fdc086"
+                   ]
+                },
+                "textinfo": "label+value",
+                "hoverinfo": "all",
+                "labels": gen,
+                "values": gen_count
+              }
+            ],
+            "layout": {
+              "title": "Count and Percent of Messages by Genre"
+            }
+        },
+        {
+            "data": [
+              {
+                "type": "bar",
+                "x": cat,
+                "y": cat_num,
+                "marker": {
+                  "color": 'grey'}
                 }
+            ],
+            "layout": {
+              "title": "Count of Messages by Category",
+              'yaxis': {
+                  'title': "Count"
+              },
+              'xaxis': {
+                  'title': "Genre"
+              },
+              'barmode': 'group'
             }
         }
     ]
+
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
